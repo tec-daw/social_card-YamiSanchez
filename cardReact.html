@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="businessCard.css">
+</head>
+<body>
+	<div id="root"></div>
+	<script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+	<script type="text/babel">
+
+		const rootElement = document.getElementById('root');
+		class Tarjeta extends React.Component {
+			render() {
+				return (
+					<React.Fragment>
+						<div className="front-side">
+					        <div className="color-grid">
+					            <div className="purple"></div>
+					            <div className="rose"></div>
+					            <div className="green"></div>
+					            <div className="blue"></div>
+					        </div>
+						    <div className="info-grid">
+					            <div className="name"><h2>{this.props.name}</h2>
+					            	<h5>{this.props.name2}</h5>
+					            	<img src={this.props.avatar} alt="Avatar" id="image-avatar"></img>
+					            </div>
+					            <div className="addr">{this.props.addr}</div>
+					            <div className="phoneNo">{this.props.phoneNo}</div>
+					            <div className="email">{this.props.email}</div>
+					        </div>
+					   	</div>
+					</React.Fragment>
+				);
+			}
+		}
+		ReactDOM.render(
+			<Tarjeta name="Yamile Sánchez" name2="ITIt" addr="Tulancingo, Hidalgo" phoneNo="775 120 8326" email="a01275843@itesm.mx" avatar="avatar.jpeg"/>,
+			rootElement
+		)
+	</script>
+</body>
+</html>
